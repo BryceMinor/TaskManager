@@ -29,12 +29,13 @@ let num;
 let removed;
 
 // Displays the menu for the user to select an option. Also, sets the user's response to the userInput variable
-let userInput = prompt(menu);
+// Using the toUpperCase method to convert the user's response to UPPERCASE
+let userInput = prompt(menu).toUpperCase();
 
-// Loops and continues to display the menu until the user ends the program (AKA Until the user enters CLOSE)
+// Loops and continues to display the menu until the user ends the program (AKA Until the user enters CLOSE(UPPERCASE or lowercase))
 while (userInput !== `CLOSE`) {
 
-    // Checks if user entered TASKS
+    // Checks if user entered TASKS (UPPERCASE or lowercase)
     if (userInput === `TASKS`){
 
         // The For Of Loop is used here to concatenate each task (AKA Item) in the tasks array to the showTasks string variable
@@ -92,7 +93,8 @@ while (userInput !== `CLOSE`) {
     }
 
     // Displays the menu again
-    userInput = prompt(menu);
+    // Using the toUpperCase method to convert the user's response to UPPERCASE
+    userInput = prompt(menu).toUpperCase();
 }
 
 // Alerts the user that they have closed the program
