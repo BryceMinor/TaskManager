@@ -19,6 +19,9 @@ const tasks = [
 // For displaying tasks to the user
 let showTasks = ``;
 
+// For storing the value of a new task
+let newTask;
+
 // Displays the menu for the user to select an option. Also, sets the user's response to the userInput variable
 let userInput = prompt(menu);
 
@@ -32,7 +35,7 @@ while (userInput !== `CLOSE`) {
         for (tasks of tasks){
 
             // Using \n to create a new line (AKA Line Break) after each task
-            showTasks += `${task}\n`;
+            showTasks += `${tasks}\n`;
         }
 
         // Display the current tasks to the user
@@ -40,6 +43,19 @@ while (userInput !== `CLOSE`) {
 
         // Set the value of the showTasks string variable back to an empty string
         showTasks = "";
+    }
+    
+    // Checks if user entered NEW
+    if (userInput === `NEW`){
+
+        // Prompts the user to enter a new task and stores their response
+        newTask = prompt(`Please Enter the new task:`);
+
+        // Alerts the user that their new task has been added
+        alert(`"${newTask}" has been added!`);
+
+        // Adds the user's entry as a new item at the end of the tasks array
+        tasks.push(newTask);
     }
 
     // Displays the menu again
